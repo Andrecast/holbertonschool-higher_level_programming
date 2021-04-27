@@ -6,16 +6,17 @@
  */
 int check_cycle(listint_t *list)
 {
-    listint_t *one = NULL, *two = NULL;
+	listint_t *one = NULL, *two = NULL;
 
-    one = list;
-    two = list;
-    while(one && two && two->next)
-    {
-        one = one->next; /*avanza un nodo a la vez*/
-        two = two->next->next /*avanza dos nodos a la vez*/
-        if (one == two)/*si los dos punteros apuntan al mismo nodo, es porque es un ciclo*/
-            return (1);
-    }
-    return (0);
+	one = list;
+	two = list;
+	while (one && two && two->next)
+	{
+		one = one->next; /*avanza un nodo a la vez*/
+		two = two->next->next /*avanza dos nodos a la vez*/
+		if (one == two)/*si los dos punteros apuntan al mismo nodo,*/
+		/* es porque es un ciclo*/
+			return (1);
+	}
+	return (0);
 }
