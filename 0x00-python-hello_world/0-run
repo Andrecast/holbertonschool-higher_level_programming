@@ -1,2 +1,2 @@
 #!/bin/bash
-python3 $PYFILE #los archivos de python se ejecutan con python3 en lugar de ./ o sh
+python3 $PYFILE
