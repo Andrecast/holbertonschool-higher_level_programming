@@ -480,8 +480,7 @@ guillaume@ubuntu:~/py/0x00$ wc -l 8-concat_edges.py
 5 8-concat_edges.py
 guillaume@ubuntu:~/py/0x00$ 
 ```
-### . Easter Egg
-
+### 9. Easter Egg
 mandatory
 
 Write a Python script that prints “The Zen of Python”, by TimPeters, followed by a new line.
@@ -513,6 +512,8 @@ If the implementation is easy to explain, it may be a good idea.
 Namespaces are one honking great idea -- let's do more of those!
 guillaume@ubuntu:~/py/0x00$
 ```
+(https://www.atemon.com/blog/the-zen-of-python-also-known-as-pep-20/)
+
 ### 10. Linked list cycle
 
 mandatory
@@ -706,3 +707,89 @@ carrie@ubuntu:~/0x00$
 ```
 
 > Solving a problem is already a big win! but finding the best and optimal way to solve it, it’s way better! Think about the most optimal / fastest way to do it.
+
+### 11. Hello, write
+#advanced
+
+Write a Python script that prints exactly  `and that piece of art is useful - Dora Korpar, 2015-10-19`, followed by a new line.
+
+-   Use the function  `write`  from the  `sys`  module
+-   You are not allowed to use  `print`
+-   Your script should print to  `stderr`
+-   Your script should exit with the status code  `1`
+-   (Dora Korpar was a Holberton student in Cohort 0 of San Francisco)
+
+```
+guillaume@ubuntu:~/py/0x00$ ./100-write.py
+and that piece of art is useful - Dora Korpar, 2015-10-19
+guillaume@ubuntu:~/py/0x00$ echo $?
+1
+guillaume@ubuntu:~/py/0x00$ ./100-write.py 2> q
+guillaume@ubuntu:~/py/0x00$ cat q
+and that piece of art is useful - Dora Korpar, 2015-10-19
+guillaume@ubuntu:~/py/0x00$ 
+```
+(https://data-flair.training/blogs/python-sys-module/)
+(https://www.geeksforgeeks.org/sys-stdout-write-in-python/)
+
+### 12. Compile
+
+#advanced
+
+Write a script that compiles a Python script file.
+
+The Python file name will be stored in the environment variable  `$PYFILE`
+
+The output filename has to be  `$PYFILEc`  (ex:  `export PYFILE=my_main.py`  => output filename:  `my_main.pyc`)
+
+```
+guillaume@ubuntu:~/py/0x00$ cat main.py 
+#!/usr/bin/python3
+print("Holberton School")
+
+guillaume@ubuntu:~/py/0x00$ export PYFILE=main.py
+guillaume@ubuntu:~/py/0x00$ ./101-compile
+Compiling main.py ...
+guillaume@ubuntu:~/py/0x00$ ls
+101-compile  main.py  main.pyc
+guillaume@ubuntu:~/py/0x00$ cat main.pyc | zgrep -c "Holberton School"
+1
+guillaume@ubuntu:~/py/0x00$ od -t x1 main.pyc # SYSTEM DEPENDANT => CAN BE DIFFERENT
+0000000 ee 0c 0d 0a 91 26 3e 58 31 00 00 00 e3 00 00 00
+0000020 00 00 00 00 00 00 00 00 00 02 00 00 00 40 00 00
+0000040 00 73 0e 00 00 00 65 00 00 64 00 00 83 01 00 01
+0000060 64 01 00 53 29 02 7a 10 48 6f 6c 62 65 72 74 6f
+0000100 6e 20 53 63 68 6f 6f 6c 4e 29 01 da 05 70 72 69
+0000120 6e 74 a9 00 72 02 00 00 00 72 02 00 00 00 fa 07
+0000140 6d 61 69 6e 2e 70 79 da 08 3c 6d 6f 64 75 6c 65
+0000160 3e 02 00 00 00 73 00 00 00 00
+0000172
+guillaume@ubuntu:~/py/0x00$ 
+```
+(https://docs.python.org/3/library/compileall.html)
+
+### 13. ByteCode -> Python #1
+
+#advanced
+
+Write the Python function  `def magic_calculation(a, b):`  that does exactly the same as the following Python bytecode:
+
+```
+  3           0 LOAD_CONST               1 (98)
+              3 LOAD_FAST                0 (a)
+              6 LOAD_FAST                1 (b)
+              9 BINARY_POWER
+             10 BINARY_ADD
+             11 RETURN_VALUE
+
+```
+
+-   Tip:  [Python bytecode](https://intranet.hbtn.io/rltoken/FYK4MePotTrqXCfiKYxL7Q "Python bytecode")
+
+**Repo:**
+
+-   GitHub repository:  `holbertonschool-higher_level_programming`
+-   Directory:  `0x00-python-hello_world`
+-   File:  `102-magic_calculation.py`
+
+(https://www.tutorialspoint.com/disassembler-for-python-bytecode#:~:text=The%20dis%20module%20in%20Python,implementation%20detail%20of%20the%20interpreter)
