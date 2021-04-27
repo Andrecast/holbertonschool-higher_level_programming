@@ -10,7 +10,7 @@ if number >= 0:
     elif lastdig == 0:
         print("Last digit of {} is {} and\
  is 0".format(number, lastdig))
-    elif (lastdig < 6) and (lastdig != 0):
+    else:
         print("Last digit of {} is {} and\
  is less than 6 and not 0".format(number, lastdig))
 else:
@@ -21,5 +21,3 @@ else:
     else:
         print("Last digit of {} is {} and\
  is less than 6 and not 0".format(number, -(lastdigneg % 10)))
-
-
