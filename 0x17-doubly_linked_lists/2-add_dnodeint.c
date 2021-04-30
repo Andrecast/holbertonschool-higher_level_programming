@@ -13,6 +13,7 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 	if (head == NULL)/*si el doble puntero es NULL, no hay nada*/
 		return (NULL);
 	new = malloc(sizeof(dlistint_t));
+	/*verificar malloc**/
 	if (new == NULL)
 		return (NULL);
 	new->prev = NULL;/*le asigno NULL porq va a ser el nuevo nodo*/
