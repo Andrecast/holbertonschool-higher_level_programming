@@ -22,7 +22,7 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 	new->next = *head;
 
 	/*Mientras la lista no esté vacía*/
-	while (*head != NULL)
+	if (*head != NULL)
 		(*head)->prev = new;/*Ahora new está al inicio de la lista*/
 
 	*head = new;
