@@ -13,16 +13,16 @@ listint_t *insert_node(listint_t **head, int number)
     if (nuevo == NULL)
         return (NULL);
     nuevo->n = number;
-    if (number < temporal->n)
-    {
-        nuevo->next = *head;
-        *head = nuevo;
-        return (nuevo);
-    }
     if (!*head)
     {
         *head = nuevo;
         nuevo->next = NULL;
+        return (nuevo);
+    }
+    if (number < temporal->n)
+    {
+        nuevo->next = *head;
+        *head = nuevo;
         return (nuevo);
     }
     while (temporal)
