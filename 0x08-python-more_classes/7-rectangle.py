@@ -54,7 +54,7 @@ class Rectangle:
         if self.height == 0 or self.width == 0:
             return rect
         for row in range(self.height):
-            rect += ('#' * self.width)
+            rect += (str(self.print_symbol) * self.width)
             if row != self.height - 1:
                 rect += '\n'
         return rect
