@@ -781,6 +781,8 @@ guillaume@ubuntu:~/0x04$
 -   Directory:  `0x04-python-more_data_structures`
 -   File:  `11-multiply_list_map.py`
 
+https://docs.hektorprofe.net/python/funcionalidades-avanzadas/funcion-map/ 
+
 
 ### 12. Roman to Integer
 
