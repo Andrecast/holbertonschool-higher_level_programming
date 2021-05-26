@@ -1,0 +1,78 @@
+=========================================================
+Function that prints My name is <first name> <last name>
+=========================================================
+
+---------------------------------
+Using function "say_my_name"
+---------------------------------
+
+Import "say_my_name" from the "3-say_my_name" module:
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Check doscstring for module:
+    >>> __import__('3-say_my_name').__doc__ != None
+    True
+
+Check docstring for function:
+    >>> len(say_my_name.__doc__) > 0
+    True
+
+README Create and not empty:
+    >>> import os
+    >>> os.path.exists('README.md')
+    True
+
+Sheebang:
+    >>> import os
+    >>> os.popen("head -1 3-say_my_name.py").read()
+    '#!/usr/bin/python3\n'
+
+PEP8:
+	>>> import os
+	>>> os.popen("pep8 3-say_my_name.py").read()
+	''
+
+NEW_LINE AT THE END OF THE FILE
+	>>> os.popen("cat -e 3-say_my_name.py | tail -1").read()[-1]
+	'\n'
+
+Edge cases:
+
+valid cases:
+	>>> say_my_name("Juan", "Morales")
+	My name is Juan Morales
+
+	>>> say_my_name("Andre", "77")
+	My name is Andre 77
+
+	>>> say_my_name("")
+	My name is  
+
+	>>> say_my_name("", "hola")
+	My name is  hola
+
+Invalid cases:
+	>>> say_my_name(77, "Andre")
+	Traceback (most recent call last):
+	...
+	TypeError: first_name must be a string
+    
+	>>> say_my_name("Juan", 88)
+	Traceback (most recent call last):
+	...
+	TypeError: last_name must be a string
+
+	>>> say_my_name(250)
+	Traceback (most recent call last):
+	...
+	TypeError: first_name must be a string
+
+	>>> say_my_name(["A", "J"], "Morales")
+	Traceback (most recent call last):
+	...
+	TypeError: first_name must be a string
+
+	>>> say_my_name("", 6778)
+	Traceback (most recent call last):
+	...
+	TypeError: last_name must be a string

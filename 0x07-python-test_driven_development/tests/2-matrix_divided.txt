@@ -1,0 +1,82 @@
+===============================================
+Function that  divides all elements of a matrix
+===============================================
+
+---------------------------------
+Using function "matrix_divided"
+---------------------------------
+
+Import "matrix_divided" from the "2-matrix_divided" module:
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Check doscstring for module:
+    >>> __import__('2-matrix_divided').__doc__ != None
+    True
+
+Check docstring for function:
+    >>> len(matrix_divided.__doc__) > 0
+    True
+
+README Create and not empty:
+    >>> import os
+    >>> os.path.exists('README.md')
+    True
+
+Sheebang:
+    >>> import os
+    >>> os.popen("head -1 2-matrix_divided.py").read()
+    '#!/usr/bin/python3\n'
+
+PEP8:
+	>>> import os
+	>>> os.popen("pep8 2-matrix_divided.py").read()
+	''
+
+NEW_LINE AT THE END OF THE FILE
+	>>> os.popen("cat -e 2-matrix_divided.py | tail -1").read()[-1]
+	'\n'
+
+Edge cases:
+
+    >>> matrix_divided([[10.5, -40, 6], [2]], 2)
+    Traceback (most recent call last):
+        ...
+    TypeError: Each row of the matrix must have the same size
+
+    >>> matrix_divided([[10.5, -40, 6], ["D", -8.04, 3.584]], 2)
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix_divided([[10.5, -40, 6], (2, -8.04, 3.584)], 2)
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix_divided(([10.5, -40, 6], [2, -8.04, 3.584]), 2)
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix = [[10.5, -40, 6], [2, -8.04, 3.584]]
+
+    >>> matrix_divided(matrix, 0)
+    Traceback (most recent call last):
+        ...
+    ZeroDivisionError: division by zero
+
+    >>> matrix_divided(matrix, 2)
+    [[5.25, -20.0, 3.0], [1.0, -4.02, 1.79]]
+
+    >>> matrix_divided(matrix, 4.567)
+    [[2.3, -8.76, 1.31], [0.44, -1.76, 0.78]]
+
+    >>> matrix_divided(matrix, "H")
+    Traceback (most recent call last):
+        ...
+    TypeError: div must be a number
+
+    >>> matrix_divided([[10.5, -40, 6], [2, -8.04, 3.584], [7, -9, 4.6, -8.9876]], 2)
+    Traceback (most recent call last):
+        ...
+    TypeError: Each row of the matrix must have the same size

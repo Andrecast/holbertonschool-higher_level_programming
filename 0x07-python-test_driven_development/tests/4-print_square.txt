@@ -1,0 +1,132 @@
+==================================================
+Function that prints a square with the character #
+==================================================
+
+---------------------------------
+Using function "print_square"
+---------------------------------
+
+Import "print_square" from the "4-print_square" module:
+    >>> print_square = __import__('4-print_square').print_square
+
+Check doscstring for module:
+    >>> __import__('4-print_square').__doc__ != None
+    True
+
+Check docstring for function:
+    >>> len(print_square.__doc__) > 0
+    True
+
+README Create and not empty:
+    >>> import os
+    >>> os.path.exists('README.md')
+    True
+
+Sheebang:
+    >>> import os
+    >>> os.popen("head -1 4-print_square.py").read()
+    '#!/usr/bin/python3\n'
+
+PEP8:
+	>>> import os
+	>>> os.popen("pep8 4-print_square.py").read()
+	''
+
+NEW_LINE AT THE END OF THE FILE
+	>>> os.popen("cat -e 4-print_square.py | tail -1").read()[-1]
+	'\n'
+
+Edge cases:
+
+Valid:
+	>>> print_square(4)
+	####
+	####
+	####
+	####
+
+	>>> print_square(10)
+	##########
+	##########
+	##########
+	##########
+	##########
+	##########
+	##########
+	##########
+	##########
+	##########
+
+
+	>>> print_square(0)
+
+	>>> print_square(1)
+	#
+
+	>>> print_square(20)
+	####################
+	####################
+	####################
+	####################
+	####################
+	####################
+	####################
+	####################
+	####################
+	####################
+	####################
+	####################
+	####################
+	####################
+	####################
+	####################
+	####################
+	####################
+	####################
+	####################
+
+Invalid:
+	>>> print_square(-96661.0)
+	Traceback (most recent call last):
+	...
+	TypeError: size must be an integer
+
+	>>> print_square([2, 3])
+	Traceback (most recent call last):
+	...
+	TypeError: size must be an integer
+
+	>>> print_square("1")
+	Traceback (most recent call last):
+	...
+	TypeError: size must be an integer
+
+	>>> print_square(6.36)
+	Traceback (most recent call last):
+	...
+	TypeError: size must be an integer
+
+	>>> print_square(1.0)
+	Traceback (most recent call last):
+	...
+	TypeError: size must be an integer
+
+	>>> print_square(-2)
+	Traceback (most recent call last):
+	...
+	ValueError: size must be >= 0
+
+	>>> print_square(-9)
+	Traceback (most recent call last):
+	...
+	ValueError: size must be >= 0
+
+	>>> print_square({"ki": 3})
+	Traceback (most recent call last):
+	...
+	TypeError: size must be an integer
+
+	>>> print_square("")
+	Traceback (most recent call last):
+	...
+	TypeError: size must be an integer
