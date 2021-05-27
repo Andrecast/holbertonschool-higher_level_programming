@@ -1,0 +1,57 @@
+==================================================
+Function that prints a text with 2 new lines after
+each of these characters: ., ? and :
+==================================================
+
+---------------------------------
+Using function "text_indentation"
+---------------------------------
+
+Import "text_indentation" from the "5-text_indentation" module:
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Check doscstring for module:
+    >>> __import__('5-text_indentation').__doc__ != None
+    True
+
+Check docstring for function:
+    >>> len(text_indentation.__doc__) > 0
+    True
+
+README Create and not empty:
+    >>> import os
+    >>> os.path.exists('README.md')
+    True
+
+Sheebang:
+    >>> import os
+    >>> os.popen("head -1 5-text_indentation.py").read()
+    '#!/usr/bin/python3\n'
+
+PEP8:
+	>>> import os
+	>>> os.popen("pep8 5-text_indentation.py").read()
+	''
+
+NEW_LINE AT THE END OF THE FILE
+	>>> os.popen("cat -e 5-text_indentation.py | tail -1").read()[-1]
+	'\n'
+
+Edge cases:
+	>>> text_indentation("Andre Hola")
+	Andre Hola
+
+	>>> text_indentation("Si.Ya")
+	Si.
+	<BLANKLINE>
+	Ya
+
+	>>> text_indentation(67)
+	Traceback (most recent call last):
+	...
+	TypeError: text must be a string
+
+    >>> text_indentation(["holberton", 26, 'L'])
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
