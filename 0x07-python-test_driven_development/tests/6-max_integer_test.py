@@ -16,6 +16,7 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([1, 2, 3.2, -14.8]), 3.2)
         self.assertEqual(max_integer([1, 2, 3, float('inf')]), float('inf'))
         self.assertEqual(max_integer([1, 2, 1000, float('-inf')]), 1000)
+        self.assertEqual(max_integer([3], 3)
 
     def test_different_values(self):
         self.assertEqual(max_integer([10, 10, 10, 10]), 10)
@@ -38,3 +39,4 @@ class TestMaxInteger(unittest.TestCase):
         self.assertRaises(TypeError, max_integer, ["Holberton", "Hello", 3])
         self.assertEqual(max_integer(("Hello", "World")), "World")
         self.assertRaises(TypeError, max_integer, ("Hello", 21, "World"))
+
