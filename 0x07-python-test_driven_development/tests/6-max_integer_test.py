@@ -39,4 +39,3 @@ class TestMaxInteger(unittest.TestCase):
         self.assertRaises(TypeError, max_integer, ["Holberton", "Hello", 3])
         self.assertEqual(max_integer(("Hello", "World")), "World")
         self.assertRaises(TypeError, max_integer, ("Hello", 21, "World"))
-
