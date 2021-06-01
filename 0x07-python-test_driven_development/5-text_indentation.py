@@ -13,25 +13,14 @@ def text_indentation(text):
 
     if type(text) != str:
         raise TypeError("text must be a string")
-    characters = ['.', '?', ':']
 
-    position = 0
-    for i in text:
-        if i in characters:
-            if text[position + 1] == " ":
-                text = text[:position + 1] + text[position + 2:]
-        else:
-            position += 1
+    text = text.replace('.', '.\n\n')
+    text = text.replace('?', '?\n\n')
+    text = text.replace(':', ':\n\n')
 
-    position = 0
-    for i in text:
-        if i in characters:
-            text = text[:position + 1] + '\n\n' + text[position + 1:]
-            position += 3
-        else:
-            position += 1
+    new = "/n".join(i.strip() for i in text.split("\n"))
 
-    print(text, end='')
+    print(new, end='')
 
 if __name__ == "__main__":
     import doctest
