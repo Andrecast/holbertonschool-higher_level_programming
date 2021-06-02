@@ -10,33 +10,6 @@ Import "print_sorted" from the "1-my_list" module:
 
     >>> MyList = __import__('1-my_list').MyList
 
-Check doscstring for module:
-    >>> __import__('1-my_list').__doc__ != None
-    True
-
-Check docstring for function:
-    >>> len(print_sorted.__doc__) > 0
-    True
-
-README Create and not empty:
-    >>> import os
-    >>> os.path.exists('README.md')
-    True
-
-Sheebang:
-    >>> import os
-    >>> os.popen("head -1 1-my_list.py").read()
-    '#!/usr/bin/python3\n'
-
-PEP8:
-	>>> import os
-	>>> os.popen("pep8 1-my_list.py").read()
-	''
-
-NEW_LINE AT THE END OF THE FILE
-	>>> os.popen("cat -e 1-my_list.py | tail -1").read()[-1]
-	'\n'
-
 Edge cases:
 >>> my_list = MyList()
 >>> my_list.append(1)
@@ -45,23 +18,18 @@ Edge cases:
 >>> my_list.append(3)
 >>> my_list.append(5)
 
-
 >>> print(my_list)
 [1, 4, 2, 3, 5]
-
 
 >>> my_list.print_sorted()
 [1, 2, 3, 4, 5]
 
-
 >>> print(my_list)
 [1, 4, 2, 3, 5]
-
 
 >>> my_list.append()
 Traceback (most recent call last):
 TypeError: append() takes exactly one argument (0 given)
-
 
 >>> my_list.append("Hello")
 >>> my_list.print_sorted()
@@ -79,7 +47,6 @@ TypeError: unorderable types: str() < int()
 Traceback (most recent call last):
 TypeError: unorderable types: int() < NoneType()
 
-
 >>> my_list = MyList()
 >>> my_list.append(-32341)
 >>> my_list.append(342334)
@@ -88,7 +55,6 @@ TypeError: unorderable types: int() < NoneType()
 >>> my_list.append(float('inf'))
 >>> my_list.print_sorted()
 [-32341, 443, 342334, 56785323234645, inf]
-
 
 >>> my_list = MyList()
 >>> my_list.append(-32341)
