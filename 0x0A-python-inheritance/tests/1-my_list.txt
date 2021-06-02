@@ -1,0 +1,81 @@
+=====================================
+Module that contains the class MyList
+=====================================
+
+---------------------------------
+Using function "print_sorted"
+---------------------------------
+
+Import "print_sorted" from the "1-my_list" module:
+
+    >>> MyList = __import__('1-my_list').MyList
+
+Check doscstring for module:
+    >>> __import__('1-my_list').__doc__ != None
+    True
+
+Check docstring for function:
+    >>> len(print_sorted.__doc__) > 0
+    True
+
+README Create and not empty:
+    >>> import os
+    >>> os.path.exists('README.md')
+    True
+
+Sheebang:
+    >>> import os
+    >>> os.popen("head -1 1-my_list.py").read()
+    '#!/usr/bin/python3\n'
+
+PEP8:
+	>>> import os
+	>>> os.popen("pep8 1-my_list.py").read()
+	''
+
+NEW_LINE AT THE END OF THE FILE
+	>>> os.popen("cat -e 1-my_list.py | tail -1").read()[-1]
+	'\n'
+
+Edge cases:
+    >>> l = MyList()
+    >>> l.append(155)
+    >>> l.append(2)
+    >>> l.append(74)
+    >>> l.append(-15)
+    >>> l.print_sorted()
+    [-15, 2, 74, 155]
+
+    >>> print(l)
+    [155, 2, 74, -15]
+
+    >>> l.print_sorted() == l
+    [-15, 2, 74, 155]
+    False
+    
+    >>> l = MyList("kawai")
+    >>> print(l)
+    ['k', 'a', 'w', 'a', 'i']
+
+    >>> l.print_sorted()
+    ['a', 'a', 'i', 'k', 'w']
+
+    >>> my_list = MyList()
+    >>> print(my_list)
+    []
+
+    >>> my_list.print_sorted()
+    []
+
+    >>> my_list.append(500)
+    >>> my_list.append(1)
+    >>> print(my_list)
+    [500, 1]
+    >>> my_list.print_sorted()
+    [1, 500]
+
+    >>> sorted_list = my_list.print_sorted()
+    [1, 500]
+    >>> sorted_list is my_list
+    False
+    
