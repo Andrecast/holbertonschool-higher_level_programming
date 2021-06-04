@@ -821,6 +821,8 @@ Write a program that prints the ASCII alphabet, in reverse order, alternating lo
 guillaume@ubuntu:~/0x01$ ./100-print_tebahpla.py
 zYxWvUtSrQpOnMlKjIhGfEdCbAguillaume@ubuntu:~/0x01$
 ```
+(https://www.programiz.com/python-programming/methods/built-in/reversed)
+
 ### 15. Remove at position
 
 #advanced
