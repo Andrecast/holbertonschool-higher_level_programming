@@ -8,12 +8,11 @@ def pascal_triangle(n):
     """
     Function that prints a pascal triangle
     """
-    rows = []
-    for line in range(1, n + 1):
-        numbers = []
-        C = 1
-        for i in range(1, line + 1):
-            numbers.append(C)
-            C = int(C * (line - i) / i)
-        rows.append(numbers)
-    return rows
+    filas = [[1], [1, 1]]
+    for i in range(1, n):
+        colum = [1]
+        for j in range(0, len(filas[i]) - 1):
+            colum.extend([ filas[i][j] + filas[i][j + 1] ])
+        colum += [1]
+        filas.append(colum)
+    return filas
