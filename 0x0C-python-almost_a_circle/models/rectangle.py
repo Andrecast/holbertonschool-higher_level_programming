@@ -10,11 +10,11 @@ class Rectangle(Base):
     """class Rectangle that inherits from Base"""
     def __init__(self, width, height, x=0, y=0, id=None):
         # llamar el id de la super clase
-        super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
         self.y = y
+        super().__init__(id)
 
     @property
     def width(self):
@@ -86,7 +86,7 @@ class Rectangle(Base):
 
     def area(self):
         """Function that returns the rectangle area"""
-        return (self.width * self.height)
+        return (self.__width * self.__height)
 
     def display(self):
         """
@@ -101,3 +101,13 @@ class Rectangle(Base):
         return "[{}] ({}) {}/{} - {}/{}\
         ".format(__class__.__name__, self.id, self.__x,
         self.__y, self.__width, self.__height)
+
+    def update(self, *args, **kwargs):
+        if args:
+            names = ['id', 'width', 'height', 'x', 'y']
+            for i in range(len(args)):
+                setattr(self, names[i], args[i])
+        else:
+            for key, value in kwargs.items():
+                if hasattr(self, key):
+                    setattr(self, key, value)
