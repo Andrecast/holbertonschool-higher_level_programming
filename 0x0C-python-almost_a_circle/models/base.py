@@ -11,8 +11,8 @@ class Base:
         """
         Constructor
         """
-        if id:
+        if id:  # si el usuario pasa un id, lo asigna
             self.id = id
-        else:
+        else:  # si no pasa un id, se asigna el del contador
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
