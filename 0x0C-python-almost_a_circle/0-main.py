@@ -4,6 +4,8 @@ from models.base import Base
 
 if __name__ == "__main__":
 
+    #  si no se especifica id, imprime el contador
+    #  si se especifica un id, imprimer ese mismo número
     b1 = Base()
     print(b1.id)
 
