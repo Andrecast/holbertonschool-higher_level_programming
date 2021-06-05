@@ -89,11 +89,13 @@ class Rectangle(Base):
         return (self.width * self.height)
 
     def display(self):
-        """prints in stdout the Rectangle instance with the character #"""
-        rectangle = ""
-        for i in range(self.height):
-            rectangle = ('#' * self.width)
-            print (rectangle)
+        """
+        prints in stdout the Rectangle instance with the character #
+        x son espacios al inicio de línea
+        y son saltos de línea
+        """
+        print('\n' * self.__y, end="")
+        print((" " * self.__x + "#" * self.width + '\n') * self.height, end="")
 
     def __str__(self):
         return "[{}] ({}) {}/{} - {}/{}\
