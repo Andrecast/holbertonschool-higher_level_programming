@@ -72,7 +72,7 @@ class Rectangle(Base):
         """y getter"""
         return self.__y
 
-    @x.setter
+    @y.setter
     def y(self, value):
         """
         1. width setter, value será el nuevo valor
