@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-rectangle
+Class rectangle from base
 """
 from models.base import Base
 
