@@ -26,7 +26,8 @@ class TestClassSquare(unittest.TestCase):
 
     def test_class_doc(self):
         """ Class with sufficient documentation """
-        self.assertTrue(len(Square.__doc__) != 0)
+        class_doc = Square.__doc__
+        self.assertTrue(len(class_doc.splitlines()) > 0)
 
     def test_functions_doc(self):
         """ Functions with sufficient documentation """
