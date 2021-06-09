@@ -61,7 +61,7 @@ class Rectangle(Base):
         2. validation of all setter methods and instantiation
         """
         if type(value) != int:
-            raise TypeError("height must be an integer")
+            raise TypeError("x must be an integer")
         if value < 0:
             raise ValueError("x must be >= 0")
         self.__x = value
@@ -78,7 +78,7 @@ class Rectangle(Base):
         2. validation of all setter methods and instantiation
         """
         if type(value) != int:
-            raise TypeError("height must be an integer")
+            raise TypeError("y must be an integer")
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
