@@ -8,7 +8,7 @@ from models.base import Base
 class Rectangle(Base):
     """class Rectangle that inherits from Base"""
     def __init__(self, width, height, x=0, y=0, id=None):
-        # llamar el id de la super clase
+        """llamar el id de la super clase"""
         self.width = width
         self.height = height
         self.x = x
@@ -97,11 +97,13 @@ class Rectangle(Base):
         print((" " * self.__x + "#" * self.width + '\n') * self.height, end="")
 
     def __str__(self):
+        """str"""
         return "[{}] ({}) {}/{} - {}/{}\
         ".format(__class__.__name__, self.id, self.__x, self.__y, self.__width,
                  self.__height)
 
     def update(self, *args, **kwargs):
+        """update"""
         if args:
             names = ['id', 'width', 'height', 'x', 'y']
             for i in range(len(args)):
@@ -112,6 +114,7 @@ class Rectangle(Base):
                     setattr(self, key, value)
 
     def to_dictionary(self):
+        """to_dictionary"""
         dictionary = {"id": self.id, "width": self.width,
                       "height": self.height, "x": self.x,
                       "y": self.y}
