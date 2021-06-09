@@ -99,8 +99,8 @@ class Rectangle(Base):
 
     def __str__(self):
         return "[{}] ({}) {}/{} - {}/{}\
-        ".format(__class__.__name__, self.id, self.__x,
-        self.__y, self.__width, self.__height)
+        ".format(__class__.__name__, self.id, self.__x, self.__y, self.__width,
+                 self.__height)
 
     def update(self, *args, **kwargs):
         if args:
@@ -113,9 +113,7 @@ class Rectangle(Base):
                     setattr(self, key, value)
 
     def to_dictionary(self):
-        dictionary = {"id": self.id,
-                    "width": self.width,
-                    "height": self.height,
-                    "x": self.x,
-                    "y": self.y}
+        dictionary = {"id": self.id, "width": self.width,
+                      "height": self.height, "x": self.x,
+                      "y": self.y}
         return dictionary
