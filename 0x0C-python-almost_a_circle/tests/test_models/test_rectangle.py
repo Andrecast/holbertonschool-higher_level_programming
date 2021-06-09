@@ -16,8 +16,8 @@ class TestClassRectangle(unittest.TestCase):
 
     def test_pep8(self):
         """testing style"""
-        with os.popen("pep8 models/rectangle.py") as my_file:
-            self.assertEqual(my_file.read(), '')
+        with os.popen("pep8 models/rectangle.py") as file:
+            self.assertEqual(file.read(), '')
 
     def test_doc(self):
         """test for module documentation """
@@ -25,7 +25,8 @@ class TestClassRectangle(unittest.TestCase):
 
     def test_class_doc(self):
         """ Class with sufficient documentation """
-        self.assertTrue(len(Rectangle.__doc__) != 0)
+        class_doc = Rectangle.__doc__
+        self.assertTrue(len(class_doc.splitlines()) > 0)
 
     def test_functions_doc(self):
         """ Functions with sufficient documentation """
