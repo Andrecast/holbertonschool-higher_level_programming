@@ -15,20 +15,18 @@ class TestClassBase(unittest.TestCase):
             first_line = file.readline()
             self.assertTrue(first_line.strip() == "#!/usr/bin/python3")
 
-    def test_doc(self):
-        """test for module documentation"""
-        module_doc = (models.base.__doc__)
-        self.assertTrue(len(module_doc.strip().splitlines()) >= 4)
-
-    def test_Class_doc(self):
-        """test for class documentation"""
-        class_doc = Base.__doc__
-        self.assertTrue(len(class_doc.splitlines()) > 4)
-
     def test_pep8(self):
         """testing style"""
         with os.popen("pep8 models/base.py") as my_file:
             self.assertEqual(my_file.read(), '')
+
+    def test_doc(self):
+        """test for module documentation"""
+        self.assertTrue(len(models.base.__doc__) != 0)
+
+    def test_Class_doc(self):
+        """test for class documentation"""
+        self.assertTrue(len(Base.__doc__) != 0)
 
     def test_constructor(self):
         """test instanses of class base"""
