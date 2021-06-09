@@ -2,7 +2,6 @@
 """
 rectangle
 """
-#  se debe importar la clase, porq está en otro archivo
 from models.base import Base
 
 
