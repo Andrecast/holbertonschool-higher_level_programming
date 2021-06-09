@@ -13,59 +13,33 @@ class TestClassBase(unittest.TestCase):
         """test for shebang"""
         with open("models/base.py", "r") as file:
             first_line = file.readline()
-            self.assertTrue(first_line.strip() == "#!/usr/bin/python3")
+            self.assertEqual(first_line, "#!/usr/bin/python3")
 
     def test_pep8(self):
         """testing style"""
-        with os.popen("pep8 models/base.py") as my_file:
-            self.assertEqual(my_file.read(), '')
+        with os.popen("pep8 models/base.py") as file:
+            self.assertEqual(file.read(), '')
 
     def test_doc(self):
-        """test for module documentation"""
-        self.assertTrue(len(models.base.__doc__) != 0)
+        comments_mod = models.base.__doc__
+        self.assertTrue(len(comments_mod.splitlines()) > 0)
 
     def test_Class_doc(self):
-        """test for class documentation"""
-        self.assertTrue(len(Base.__doc__) != 0)
+        comments_class = models.base.Base.__doc__
+        self.assertTrue(len(comments_class.splitlines()) > 0)
 
-    def test_constructor(self):
-        """test instanses of class base"""
-        b1 = Base()
-        b2 = Base()
-        b3 = Base()
-        b4 = Base(12)
-        b5 = Base()
-        b6 = Base(-9)
-        b7 = Base(0)
+    def test_id(self):
+        base1 = models.base.Base()
+        self.assertEqual(base1.id, 1)
 
-        self.assertEqual(b1.id, 1)
-        self.assertEqual(b2.id, 2)
-        self.assertEqual(b3.id, 3)
-        self.assertEqual(b4.id, 12)
-        self.assertEqual(b5.id, 4)
-        self.assertEqual(b6.id, -9)
-        self.assertEqual(b7.id, 0)
+        base2 = models.base.Base(None)
+        self.assertEqual(base2.id, 2)
 
-    def test_json_string(self):
-        """test json string"""
-        r1 = Rectangle(10, 7, 2, 8)
-        dictionary = r1.to_dictionary()
-        self.assertEqual(type(Base.to_json_string([dictionary])), str)
+        base3 = models.base.Base(460)
+        self.assertEqual(base3.id, 460)
 
-        self.assertEqual(Base.to_json_string(None), "[]")
-
-        self.assertEqual(Base.to_json_string([]), "[]")
-
-    def test_save_to_file(self):
-        """test for save to file"""
-        empty = None
-        self.assertTrue(type(Base.save_to_file(empty)), [])
-
-    def test_from_json_string(self):
-        """test from json string"""
-        self.assertEqual(Base.from_json_string(None), [])
-        self.assertEqual(Base.from_json_string("[]"), [])
-        self.assertEqual(Base.from_json_string('[{"id": 89}]'), [{"id": 89}])
+        base4 = models.base.Base()
+        self.assertEqual(base4.id, 3)
 
 if __name__ == '__main__':
     unittest.main()
