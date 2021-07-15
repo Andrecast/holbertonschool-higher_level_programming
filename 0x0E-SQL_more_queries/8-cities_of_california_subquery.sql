@@ -1,5 +1,5 @@
 -- 8. Cities of California
--- list all the cities of California that can´t be found in the DB hbtn_0d_usa
+-- list all the cities of California that can be found in the DB hbtn_0d_usa
 SELECT id, name
 FROM cities
 WHERE state_id IN (
