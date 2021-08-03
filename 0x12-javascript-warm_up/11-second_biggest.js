@@ -14,4 +14,3 @@ if (!process.argv[2] || !process.argv[3]) {
   sorted = myArray.sort((myArray, b) => (b - myArray));
   console.log(sorted[1]);
 }
-
