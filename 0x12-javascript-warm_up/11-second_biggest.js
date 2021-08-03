@@ -11,6 +11,7 @@ if (!process.argv[2] || !process.argv[3]) {
     myArray[i] = parseInt(process.argv[j]);
     j++;
   }
+  sorted = myArray.sort((myArray, b) => (b - myArray));
+  console.log(sorted[1]);
 }
-sorted = myArray.sort((myArray, b) => (b - myArray));
-console.log(sorted[1]);
+
