@@ -4,7 +4,7 @@ let i = 0;
 let j = 2;
 let sorted = [];
 
-if (process.argv.length < 4) {
+if (!process.argv[2] || !process.argv[3]) {
   console.log(0);
 } else {
   for (; i < (process.argv.length - 2); i++) {
