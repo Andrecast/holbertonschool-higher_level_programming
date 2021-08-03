@@ -623,3 +623,142 @@ guillaume@ubuntu:~/0x12$
 -   File:  `13-add.js`
 
 Done?  Help  Check your code
+
+### 14. Const or not const
+
+#advanced
+
+Write a file that modifies the value of  `myVar`  to  `333`
+
+```
+guillaume@ubuntu:~/0x12$ cat 100-main.js
+#!/usr/bin/node
+myVar = 89;
+require('./100-let_me_const')
+console.log(myVar);
+guillaume@ubuntu:~/0x12$ ./100-main.js
+333
+guillaume@ubuntu:~/0x12$ 
+
+```
+
+![](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2020/9/4ae30fb44f708dbb3abc211b784db614e615ca21.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUWMNL5ANN%2F20210803%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210803T023821Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=0e46ad8f1072f7b723950c28a33ec4468ecf7dfb54a3170cc6ef09960108e194)
+
+Do you get it? Tweet! Post! Talk about it!
+
+Hint: Scope
+
+**This exercise doesn’t pass  `semistandard`**  so don’t worry about it.
+
+**Repo:**
+
+-   GitHub repository:  `holbertonschool-higher_level_programming`
+-   Directory:  `0x12-javascript-warm_up`
+-   File:  `100-let_me_const.js`
+
+Done!  Help  Check your code
+
+### 15. Call me Moby
+
+#advanced
+
+Write a function that executes  `x`  times a function.
+
+-   The function must be visible from outside
+-   Prototype:  `function (x, theFunction)`
+-   You are not allowed to use  `var`
+
+```
+guillaume@ubuntu:~/0x12$ cat 101-main.js
+#!/usr/bin/node
+const callMeMoby = require('./101-call_me_moby').callMeMoby;
+callMeMoby(3, function () {
+  console.log('C is fun');
+});
+guillaume@ubuntu:~/0x12$ ./101-main.js
+C is fun
+C is fun
+C is fun
+guillaume@ubuntu:~/0x12$ 
+
+```
+
+**Repo:**
+
+-   GitHub repository:  `holbertonschool-higher_level_programming`
+-   Directory:  `0x12-javascript-warm_up`
+-   File:  `101-call_me_moby.js`
+
+Done!  Help  Check your code  Get a sandbox
+
+### 16. Add me maybe
+
+#advanced
+
+Write a function that increments and calls a function.
+
+-   The function must be visible from outside
+-   Prototype:  `function (number, theFunction)`
+-   You are not allowed to use  `var`
+
+```
+guillaume@ubuntu:~/0x12$ cat 102-main.js
+#!/usr/bin/node
+const addMeMaybe = require('./102-add_me_maybe').addMeMaybe;
+addMeMaybe(4, function (nb) {
+  console.log('New value: ' + nb);
+});
+guillaume@ubuntu:~/0x12$ ./102-main.js
+New value: 5
+guillaume@ubuntu:~/0x12$ 
+
+```
+
+**Repo:**
+
+-   GitHub repository:  `holbertonschool-higher_level_programming`
+-   Directory:  `0x12-javascript-warm_up`
+-   File:  `102-add_me_maybe.js`
+
+Done?  Help  Check your code  Get a sandbox
+
+### 17. Increment object
+
+#advanced
+
+Update this script by adding a new function  `incr`  that increments the integer  `value`.
+
+-   You are not allowed to use  `var`
+
+```
+guillaume@ubuntu:~/0x12$ cat 103-object_fct.js
+#!/usr/bin/node
+const myObject = {
+  type: 'object',
+  value: 12
+};
+console.log(myObject);
+/*
+YOUR CODE HERE
+*/
+myObject.incr();
+console.log(myObject);
+myObject.incr();
+console.log(myObject);
+myObject.incr();
+console.log(myObject);
+
+guillaume@ubuntu:~/0x12$ ./103-object_fct.js 
+{ type: 'object', value: 12 }
+{ type: 'object', value: 13, incr: [Function] }
+{ type: 'object', value: 14, incr: [Function] }
+{ type: 'object', value: 15, incr: [Function] }
+guillaume@ubuntu:~/0x12$ 
+
+```
+
+**Repo:**
+
+-   GitHub repository:  `holbertonschool-higher_level_programming`
+-   Directory:  `0x12-javascript-warm_up`
+-   File:  `103-object_fct.js`
