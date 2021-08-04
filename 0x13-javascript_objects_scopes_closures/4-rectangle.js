@@ -1,7 +1,7 @@
 #!/usr/bin/node
 class Rectangle {
   constructor (w, h) {
-    if (w > 0 && h > 0) { // if w or h is a positive integer create a object
+    if (w > 0 && h > 0) {
       this.width = w;
       this.height = h;
     }
@@ -15,9 +15,9 @@ class Rectangle {
   }
 
   rotate () {
-    const forChange = this.height;
+    const tmp = this.height;
     this.height = this.width;
-    this.width = forChange;
+    this.width = tmp;
   }
 
   double () {
