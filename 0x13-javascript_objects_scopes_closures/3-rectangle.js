@@ -6,6 +6,7 @@ class Rectangle {
       this.height = h;
     }
   }
+
   print () {
     const character = 'X';
     for (let i = 0; i < this.height; i++) {
