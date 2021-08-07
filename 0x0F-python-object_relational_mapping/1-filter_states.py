@@ -17,8 +17,7 @@ if __name__ == "__main__":
 
     # Print
     for row in cur.fetchall():  # fetch (recuperar) trae la información
-        if row[1][0] == 'N':
-            print(row)
+        print(row)
 
     # close cursor
     db.close()
