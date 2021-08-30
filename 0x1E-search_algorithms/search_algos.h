@@ -35,8 +35,6 @@ typedef struct skiplist_s
 	struct skiplist_s *express;
 } skiplist_t;
 
-int interpolation_recursive(int *array, size_t low, size_t high, int value);
-
 int linear_search(int *array, size_t size, int value);
 int binary_search(int *array, size_t size, int value);
 int bin_search_recursive(int *array, size_t start, size_t end, int value);
